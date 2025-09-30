@@ -11,6 +11,10 @@ use League\OAuth2\Client\Provider\Google;
 date_default_timezone_set('Etc/UTC');
 
 require 'vendor/autoload.php';
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 // Establecer conexión a la base de datos
 $con = new mysqli('mysql_server', 'firma_documentos', '57ni2eF', 'firma_bqhoteles', 3306);
@@ -164,13 +168,13 @@ body{
         //Start Option 1: Use league/oauth2-client as OAuth2 token provider
         //Fill in authentication details here
         //Either the gmail account owner, or the user that gave consent
-        $clientId = getenv('GOOGLE_CLIENT_ID');
-        $clientSecret = getenv('GOOGLE_CLIENT_SECRET');
+        $clientId = $_ENV['GOOGLE_CLIENT_ID'];
+        $clientSecret = $_ENV['GOOGLE_CLIENT_SECRET'];
+        $refreshToken = $_ENV['GOOGLE_REFRESH_TOKEN'];
 
         $email = 'soporte@bqhoteles.com';
         //Obtained by configuring and running get_oauth_token.php
         //after setting up an app in Google Developer Console.
-        $refreshToken = getenv('GOOGLE_REFRESH_TOKEN');
 
         //Create a new OAuth2 provider instance
         $provider = new Google([
