@@ -164,13 +164,13 @@ body{
         //Start Option 1: Use league/oauth2-client as OAuth2 token provider
         //Fill in authentication details here
         //Either the gmail account owner, or the user that gave consent
-        $client_id = getenv('GOOGLE_CLIENT_ID');
-        $client_secret = getenv('GOOGLE_CLIENT_SECRET');
+        $clientId = getenv('GOOGLE_CLIENT_ID');
+        $clientSecret = getenv('GOOGLE_CLIENT_SECRET');
 
         $email = 'soporte@bqhoteles.com';
         //Obtained by configuring and running get_oauth_token.php
         //after setting up an app in Google Developer Console.
-        $refresh_token = getenv('GOOGLE_REFRESH_TOKEN');
+        $refreshToken = getenv('GOOGLE_REFRESH_TOKEN');
 
         //Create a new OAuth2 provider instance
         $provider = new Google([
