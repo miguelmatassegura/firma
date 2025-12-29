@@ -240,7 +240,11 @@ $url_s3 = 'https://imagenes-firmas-corporativas.s3.eu-west-1.amazonaws.com/bqhot
                         <span style="font-size: 12px; font-weight: bold; vertical-align: super;">Siguenos!</span>
                     </td>
                 </tr>
+             
                 <tr>
+                    <td colspan="6" style="padding-top: 15px; text-align: center;">
+                    <img src="<?php echo $url_s3; ?>banner.gif" alt="">
+                    </td>
                     <td colspan="6" style="padding-top: 15px;">
                         <table cellpadding="0" cellspacing="0">
                             <tr>

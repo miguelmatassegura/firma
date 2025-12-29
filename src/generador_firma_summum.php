@@ -104,10 +104,14 @@
                       <a href="https://summumhotelgroup.com" style="color: #1a1a1a; text-decoration: none;">summumhotelgroup.com</a>
                     </td>
                   </tr>
+                  
                 </table>
               </td>
             </tr>
             <tr>
+                <td colspan="3" style="padding-top: 15px; text-align: center;">
+                    <img src="<?php echo $url_s3; ?>banner.gif" width="500" style="max-width: 100%; height: auto; display: block; border: 0;" alt="">
+                </td>
                 <td colspan="3" style="padding-top: 20px;">
                     <table cellpadding="0" cellspacing="0" style="width: 100%; border-collapse: collapse;">
                         <tr>
