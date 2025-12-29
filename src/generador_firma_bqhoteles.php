@@ -234,17 +234,20 @@ $url_s3 = 'https://imagenes-firmas-corporativas.s3.eu-west-1.amazonaws.com/bqhot
                 </tr>
                 <tr>
                     <td colspan="6" style="padding-top: 10px;">
-                        <a href="https://www.facebook.com/BQHoteles"><img src="<?php echo $url_s3; ?>face.png" width="24" style="margin-right:5px;"></a>
-                        <a href="https://www.instagram.com/bqhoteles/"><img src="<?php echo $url_s3; ?>ins.png" width="24" style="margin-right:5px;"></a>
-                        <a href="https://twitter.com/BQHoteles"><img src="<?php echo $url_s3; ?>twi.png" width="24" style="margin-right:10px;"></a>
+                        <a href="https://www.facebook.com/BQHoteles"><img src="<?php echo $url_s3; ?>face.png" width="24" style="margin-right:2px;"></a>
+                        <a href="https://www.instagram.com/bqhoteles/"><img src="<?php echo $url_s3; ?>ins.png" width="24" style="margin-right:2px;"></a>
+                        <a href="https://twitter.com/BQHoteles"><img src="<?php echo $url_s3; ?>twi.png" width="24" style="margin-right:5px;"></a>
                         <span style="font-size: 12px; font-weight: bold; vertical-align: super;">Siguenos!</span>
                     </td>
                 </tr>
-             
                 <tr>
                     <td colspan="6" style="padding-top: 15px; text-align: center;">
-                    <img src="<?php echo $url_s3; ?>banner.gif" alt="">
+                    <img src="<?php echo $url_s3; ?>banner.gif" style="max-width: 100%; height: auto; display: block; border: 0;" alt="">
                     </td>
+    </tr>    
+             
+                <tr>
+                    
                     <td colspan="6" style="padding-top: 15px;">
                         <table cellpadding="0" cellspacing="0">
                             <tr>
