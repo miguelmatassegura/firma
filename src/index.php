@@ -378,7 +378,7 @@ a{
 <tr>
 <td  style="font-size: 12px; color: #FBBB01;">';
 
-    echo '<img src="<img src="' .
+    echo '<img src="' .
         $url_s3 .
         'arbol.gif" role="presentation" width="25"  style="max-width: 25px;"><span><i>Imprima este correo sólo si es necesario.</i></span>';
     echo '
