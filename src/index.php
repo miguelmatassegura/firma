@@ -73,102 +73,95 @@ body{
 	<button onclick="setTimeout(function(){location.reload();}, 3000);">RECARGAR INFORMACIÓN</button>
 </form>
 <div style="border: 1px solid red;">
-<?php
-if(isset($_POST['submit'])) 
-{ 
-	
+<?php if (isset($_POST['submit'])) {
     $nombre = $_POST['nombre'];
-	$apellido=$_POST['apellido'];
-	$cargo=$_POST['cargo'];
-	$hotel=$_POST['hotel'];
-	$ext=$_POST['ext'];
-	$movil=$_POST['movil'];
-	$email=$_POST['email'];
-	$nombre = ucfirst($nombre); 
-	$apellido = ucfirst($apellido);
-	$cargo = ucfirst($cargo);	
+    $apellido = $_POST['apellido'];
+    $cargo = $_POST['cargo'];
+    $hotel = $_POST['hotel'];
+    $ext = $_POST['ext'];
+    $movil = $_POST['movil'];
+    $email = $_POST['email'];
+    $nombre = ucfirst($nombre);
+    $apellido = ucfirst($apellido);
+    $cargo = ucfirst($cargo);
 
-		if (empty($ext)){
-			$ext="&nbsp;";}
-		else{
-			$ext="Ext.$ext";
-		}
-		
-		if (empty($movil)){
-			$movil="";}
-		else{
-			$movil="Mov:$movil";
-		}
-		
-	
-	if($hotel==='a'){
-		$hotel="BQ AUGUSTA";
-		$fijo="971700813";
-	$direccion="C/ Corb Marí, 22, 07015 Palma, Illes Balears";}
-	elseif($hotel==='b'){
-		$hotel="BQ PAGUERA BOUTIQUE";
-		$fijo="971686598";
-		$direccion="C/ Palmira, 29, 07160 Peguera, Illes Balears";}
-	elseif($hotel==='c'){
-		$hotel="BQ BULEVAR PEGUERA";
-		$fijo="971686397";
-		$direccion="C/ Eucalipto, 15, 07160 Peguera, Illes Balears";}
-	elseif($hotel==='d'){
-		$hotel="BQ BELVEDERE";
-		$fijo="971401411";
-		$direccion="C/ Mitja Lluna, 4, 07015 Palma, Illes Balears";}
-	elseif($hotel==='e'){
-		$hotel="BQ CENTRAL";
-		$fijo="971707755";
-		$direccion="C/ Marquès de la Sènia, 39 BAJOS, 07014 Palma, Illes Balears";}
-	elseif($hotel==='f'){
-		$hotel="BQ APOLO";
-		$fijo="971262500";
-		$direccion="C/ Miquel Massutí, 28, 07610 Palma, Illes";}
-	elseif($hotel==='g'){
-		$hotel="BQ AMFORA";
-		$fijo="971491580";
-		$direccion="C/ Volantí, 9, 07610 Palma, Illes Balears";}
-	elseif($hotel==='h'){
-		$hotel="BQ AGUAMARINA BOUTIQUE";
-		$fijo="971261662";
-		$direccion="C/ Sant Antoni de la Platja, 41, 07610 Palma, Illes Balears";}
-	elseif($hotel==='i'){
-		$hotel="BQ CARMEN PLAYA";
-		$fijo="971744015";
-		$direccion="C/ Ferran Alzamora, 32, 07600 Palma, Illes Balears";}
-	elseif($hotel==='j'){
-		$hotel="BQ SARAH";
-		$fijo="971850425";
-		$direccion="Av. Diagonal, 6, 07458 Can Picafort, Illes Balears";}
-	elseif($hotel==='k'){
-		$hotel="BQ CAN PICAFORT";
-		$fijo="971850001";
-		$direccion="C/ Arenal, 24, 07458 Can Picafort, Illes Balears";}
-	elseif($hotel==='l'){
-		$hotel="BQ DELFIN AZUL";
-		$fijo="971891350";
-		$direccion="C/ Fotja, 1, 07400 Alcúdia, Illes Balears";}
-	elseif($hotel==='m'){
-		$hotel="BQ ALCUDIA SUN VILLAGE";
-		$fijo="971890500";
-		$direccion="C / Circuit del Llac, 60, 07458 Muro, Illes Balears";}
-	elseif($hotel==='n'){
-		$hotel="BQ ANDALUCIA BEACH";
-		$fijo="952547970";
-		$direccion="Paseo Marítimo de Poniente s/n, 29740 Torre del Mar, Málaga";}
-	elseif($hotel==='o'){
-		$hotel="BQ CALA RATJADA";
-		$fijo="971595080";
-		$direccion="Carrer Floreal, 30, 07590 Cala Rajada, Illes Balears";}	
-	
-	
-	
-	
-	
-	
-   
-	  echo '<style type="text/css">
+    if (empty($ext)) {
+        $ext = '&nbsp;';
+    } else {
+        $ext = "Ext.$ext";
+    }
+
+    if (empty($movil)) {
+        $movil = '';
+    } else {
+        $movil = "Mov:$movil";
+    }
+
+    if ($hotel === 'a') {
+        $hotel = 'BQ AUGUSTA';
+        $fijo = '971700813';
+        $direccion = 'C/ Corb Marí, 22, 07015 Palma, Illes Balears';
+    } elseif ($hotel === 'b') {
+        $hotel = 'BQ PAGUERA BOUTIQUE';
+        $fijo = '971686598';
+        $direccion = 'C/ Palmira, 29, 07160 Peguera, Illes Balears';
+    } elseif ($hotel === 'c') {
+        $hotel = 'BQ BULEVAR PEGUERA';
+        $fijo = '971686397';
+        $direccion = 'C/ Eucalipto, 15, 07160 Peguera, Illes Balears';
+    } elseif ($hotel === 'd') {
+        $hotel = 'BQ BELVEDERE';
+        $fijo = '971401411';
+        $direccion = 'C/ Mitja Lluna, 4, 07015 Palma, Illes Balears';
+    } elseif ($hotel === 'e') {
+        $hotel = 'BQ CENTRAL';
+        $fijo = '971707755';
+        $direccion = 'C/ Marquès de la Sènia, 39 BAJOS, 07014 Palma, Illes Balears';
+    } elseif ($hotel === 'f') {
+        $hotel = 'BQ APOLO';
+        $fijo = '971262500';
+        $direccion = 'C/ Miquel Massutí, 28, 07610 Palma, Illes';
+    } elseif ($hotel === 'g') {
+        $hotel = 'BQ AMFORA';
+        $fijo = '971491580';
+        $direccion = 'C/ Volantí, 9, 07610 Palma, Illes Balears';
+    } elseif ($hotel === 'h') {
+        $hotel = 'BQ AGUAMARINA BOUTIQUE';
+        $fijo = '971261662';
+        $direccion = 'C/ Sant Antoni de la Platja, 41, 07610 Palma, Illes Balears';
+    } elseif ($hotel === 'i') {
+        $hotel = 'BQ CARMEN PLAYA';
+        $fijo = '971744015';
+        $direccion = 'C/ Ferran Alzamora, 32, 07600 Palma, Illes Balears';
+    } elseif ($hotel === 'j') {
+        $hotel = 'BQ SARAH';
+        $fijo = '971850425';
+        $direccion = 'Av. Diagonal, 6, 07458 Can Picafort, Illes Balears';
+    } elseif ($hotel === 'k') {
+        $hotel = 'BQ CAN PICAFORT';
+        $fijo = '971850001';
+        $direccion = 'C/ Arenal, 24, 07458 Can Picafort, Illes Balears';
+    } elseif ($hotel === 'l') {
+        $hotel = 'BQ DELFIN AZUL';
+        $fijo = '971891350';
+        $direccion = 'C/ Fotja, 1, 07400 Alcúdia, Illes Balears';
+    } elseif ($hotel === 'm') {
+        $hotel = 'BQ ALCUDIA SUN VILLAGE';
+        $fijo = '971890500';
+        $direccion = 'C / Circuit del Llac, 60, 07458 Muro, Illes Balears';
+    } elseif ($hotel === 'n') {
+        $hotel = 'BQ ANDALUCIA BEACH';
+        $fijo = '952547970';
+        $direccion = 'Paseo Marítimo de Poniente s/n, 29740 Torre del Mar, Málaga';
+    } elseif ($hotel === 'o') {
+        $hotel = 'BQ CALA RATJADA';
+        $fijo = '971595080';
+        $direccion = 'Carrer Floreal, 30, 07590 Cala Rajada, Illes Balears';
+    }
+
+    $url_s3 = 'https://imagenes-firmas-corporativas.s3.eu-west-1.amazonaws.com/bqhoteles/';
+
+    echo '<style type="text/css">
  @font-face {
 font-family: "Frutiger";
 src: url("https://firma.bqhoteles.com/Frutiger.ttf") format("ttf"),
@@ -196,25 +189,27 @@ a{
 <tr>
 <td width="150" style="vertical-align: middle;">
 <span style="margin-right: 20px; display: block;">
-<img src="https://firma.bqhoteles.com/logobq.jpg">
+';
+    echo '<img <img src="' . $url_s3 . 'logobq.gif">';
+    echo '
 </span></td><td style="vertical-align: middle;"><h3 color="#000000"  style="margin: 0px; font-size: 18px; color: rgb(0, 0, 0);">';
-echo "<span>$nombre</span>";
-echo "&nbsp;";
-echo "<span>$apellido</span>";
-echo '
+    echo "<span>$nombre</span>";
+    echo '&nbsp;';
+    echo "<span>$apellido</span>";
+    echo '
 </h3>
 <h8 style="margin: 0px;">
 <p color="#000000"   style="margin: 0px; color: rgb(0, 0, 0); font-size: 12px; line-height: 22px;">';
-echo "<span>$cargo</span>";
-echo '
+    echo "<span>$cargo</span>";
+    echo '
 <br>
 <span style="margin: 0px; color: rgb(0, 0, 0); font-size: 12px; line-height: 22px;"></span>
 </p>
 </h8>
 <h4 style="margin: 0px;">
 <p color="#000000"   style="margin: 0px; color: rgb(0, 0, 0);  line-height: 22px;">';
-echo "<span>$hotel</span>";
-echo '
+    echo "<span>$hotel</span>";
+    echo '
 <br>
 <span style="margin: 0px; color: rgb(0, 0, 0); font-size: 12px; line-height: 22px;"></span>
 </p>
@@ -235,8 +230,9 @@ echo '
 <tbody>
 <tr>
 <td style="vertical-align: bottom;">
-<span class="sc-kgAjT cuzzPp" style="width:11; display: block;">
-<img src="https://firma.bqhoteles.com/telefono.png" >
+<span class="sc-kgAjT cuzzPp" style="width:11; display: block;">';
+    echo '<img src="' . $url_s3 . 'telefono.png" >';
+    echo '
 </span>
 </td>
 </tr>
@@ -245,19 +241,19 @@ echo '
 </td>
 <td style="padding: 0px; color: rgb(0, 0, 0);">';
 
-echo "<a href='tel:$fijo'"; 
-echo ' color="#000000"  style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;">';
-echo "<span>$fijo</span>";
-echo'</a><span style="color: rgb(0, 0, 0); font-size: 12px;">';
-echo "&nbsp;";
-echo "$ext</span>";
-echo "&nbsp;";
-echo "&nbsp;";
-echo "&nbsp;";
-echo "<a href='$movil'"; 
-echo' color="#000000"  style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;">';
-echo "<span>$movil</span>";
-echo'</a>
+    echo "<a href='tel:$fijo'";
+    echo ' color="#000000"  style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;">';
+    echo "<span>$fijo</span>";
+    echo '</a><span style="color: rgb(0, 0, 0); font-size: 12px;">';
+    echo '&nbsp;';
+    echo "$ext</span>";
+    echo '&nbsp;';
+    echo '&nbsp;';
+    echo '&nbsp;';
+    echo "<a href='$movil'";
+    echo ' color="#000000"  style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;">';
+    echo "<span>$movil</span>";
+    echo '</a>
 </td>
 </tr>
 <tr height="15" style="vertical-align: middle;">
@@ -266,8 +262,11 @@ echo'</a>
 <tbody>
 <tr>
 <td style="vertical-align: bottom;">
-<span color="#FFBF07" width="11"  style="display: block; ">
-<img src="https://firma.bqhoteles.com/email.png" >
+<span color="#FFBF07" width="11"  style="display: block; ">';
+
+    echo '<img src="' . $url_s3 . 'email.png" >';
+
+    echo '
 </span>
 </td>
 </tr>
@@ -275,17 +274,20 @@ echo'</a>
 </table>
 </td>
 <td style="padding: 0px;">';
-echo"<a href='mailto:$email' 'color='#000000'  style='text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;' <span color='#000000'  style=' color: rgb(0, 0, 0); font-size: 12px;'>$email</span><a>
-"; 
-echo'
+    echo "<a href='mailto:$email' 'color='#000000'  style='text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;' <span color='#000000'  style=' color: rgb(0, 0, 0); font-size: 12px;'>$email</span><a>
+";
+    echo '
 </td>
 </tr>
 <tr height="25" style="vertical-align: middle;">
 <td width="30" style="vertical-align: middle;">
 <table>
 <tbody><tr><td style="vertical-align: bottom;">
-<span color="#FFBF07" width="11"  style="display: block; ">
-<img src="https://firma.bqhoteles.com/web.png"  role="presentation">
+<span color="#FFBF07" width="11"  style="display: block; ">';
+
+    echo ' <img src="' . $url_s3 . 'web.png"  role="presentation">';
+
+    echo '
 </span>
 </td>
 </tr>
@@ -304,8 +306,11 @@ echo'
 <tbody>
 <tr>
 <td style="vertical-align: bottom;">
-<span color="#FFBF07" width="11"  style="display: block;" >
-<img src="https://firma.bqhoteles.com/localizacion.png"></span>
+<span color="#FFBF07" width="11"  style="display: block;" >';
+
+    echo '<img src="' . $url_s3 . 'localizacion.png"></span>';
+
+    echo '
 </td>
 </tr>
 </tbody>
@@ -314,8 +319,8 @@ echo'
 <td style="padding: 0px;">
 <span color="#000000"  style="font-size: 12px; color: rgb(0, 0, 0);">';
 
-echo "<span>$direccion</span>";
-echo '
+    echo "<span>$direccion</span>";
+    echo '
 </span>
 </td>
 </tr>
@@ -347,10 +352,19 @@ echo '
 <td>
 <table style="width: 100%;"><tbody>
 <tr>
-<td  style="font-size: 12px; color: rgb(0, 0, 0);">
-<a href="httpss://www.facebook.com/BQHoteles" target="_blank"><img src="https://firma.bqhoteles.com/face.png" role="presentation" width="30"  style="max-width: 30px;"></a>
-<a href="httpss://www.instagram.com/bqhoteles/" target="_blank"><img src="https://firma.bqhoteles.com/ins.png" httpss role="presentation" width="30"  style="max-width: 30px;"></a>
-<a href="httpss://twitter.com/BQHoteles" target="_blank"><img src="https://firma.bqhoteles.com/twi.png" role="presentation" width="30"  style="max-width: 30px;"></a>
+<td  style="font-size: 12px; color: rgb(0, 0, 0);">';
+
+    echo '<a href="httpss://www.facebook.com/BQHoteles" target="_blank"><img src="' .
+        $url_s3 .
+        'face.png" role="presentation" width="30"  style="max-width: 30px;"></a>';
+    echo '<a href="httpss://www.instagram.com/bqhoteles/" target="_blank"><img src="' .
+        $url_s3 .
+        'ins.png" httpss role="presentation" width="30"  style="max-width: 30px;"></a>';
+    echo '<a href="httpss://twitter.com/BQHoteles" target="_blank"><img src="' .
+        $url_s3 .
+        'twi.png" role="presentation" width="30"  style="max-width: 30px;"></a>';
+
+    echo '
 <span><b>Siguenos!</b> </span>
 </td>
 </tr>
@@ -362,8 +376,12 @@ echo '
 <td>
 <table  style="width: 100%;"><tbody>
 <tr>
-<td  style="font-size: 12px; color: #FBBB01;">
-<img src="https://firma.bqhoteles.com/arbol.png" role="presentation" width="25"  style="max-width: 25px;"><span><i>Imprima este correo sólo si es necesario.</i></span>
+<td  style="font-size: 12px; color: #FBBB01;">';
+
+    echo '<img src="<img src="' .
+        $url_s3 .
+        'arbol.gif" role="presentation" width="25"  style="max-width: 25px;"><span><i>Imprima este correo sólo si es necesario.</i></span>';
+    echo '
 </td>
 </tr>
 <tr>
@@ -377,12 +395,7 @@ echo '
 </tr>
 </tbody>
 </table>';
-	  
-	  
-    
-}
-
-?>
+} ?>
 </div>
 <script src="https://asistente.bqhoteles.com/widget-bot-bq.js"></script>
 
