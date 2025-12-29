@@ -71,7 +71,7 @@
         <table cellpadding="0" cellspacing="0" style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif; border-collapse: collapse; background-color: #ffffff;">
           <tbody>
             <tr>
-              <td style="vertical-align: middle; padding-right: 30px;">
+              <td style="vertical-align: middle;">
                 <img src="<?php echo $url_s3; ?>logosummum.png" width="220" style="display: block; border: 0;" alt="Summum Hotel Group">
               </td>
 
@@ -79,7 +79,7 @@
                 <div style="height: 100px; width: 1px;"></div>
               </td>
 
-              <td style="vertical-align: middle;">
+              <td style="vertical-align: middle; padding-left: 20px;">
                 <table cellpadding="0" cellspacing="0" style="line-height: 1.4;">
                   <tr>
                     <td style="font-size: 19px; font-weight: bold; color: #1a1a1a; padding-bottom: 2px;"><?php echo $nombre; ?></td>
@@ -115,7 +115,7 @@
                 </tr>
             <tr>
                 <td colspan="3" style="padding-top: 15px; text-align: center;">
-                    <img src="<?php echo $url_s3; ?>banner.gif" width="100%" style="max-width: 100%; height: auto; display: block; border: 0;" alt="">
+                    <img src="<?php echo $url_s3; ?>banner.gif" style="max-width: 100%; height: auto; display: block; border: 0;" alt="">
                 </td>
     </tr>
             <tr>
