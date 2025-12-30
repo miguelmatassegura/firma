@@ -49,23 +49,39 @@
         <input type="text" name="nombre" placeholder="Nombre y Apellidos" required>
         <input type="text" name="cargo" placeholder="Cargo o Departamento" required>
         <input type="text" name="email" placeholder="Email corporativo" required>
-        <input type="text" name="telefono" placeholder="Teléfono fijo (ej: +34 971...)" required>
-        <input type="text" name="movil" placeholder="Móvil (ej: +34 600...)">
+        <input type="text" name="telefono" placeholder="Teléfono fijo (ej:  971...)" required>
+        <input type="text" name="extension" placeholder="Ext. (opcional)" maxlength="4" style="width: 80px;">
+        <input type="text" name="movil" placeholder="Móvil (ej: + 600...)">
         <br><br>
         <input type="submit" name="submit" class="btn-generar" value="GENERAR FIRMA SUMMUM">
     </form>
 
-    <?php if (isset($_POST['submit'])) {
+ <?php if (isset($_POST['submit'])) {
 
-        $nombre = $_POST['nombre'];
-        $cargo = $_POST['cargo'];
-        $email = $_POST['email'];
-        $telefono = $_POST['telefono'];
-        $movil = $_POST['movil'];
+     // 1. Formatear Nombre y Cargo (Mayúscula inicial en cada palabra)
+     $nombre = mb_convert_case(trim($_POST['nombre']), MB_CASE_TITLE, 'UTF-8');
+     $cargo = mb_convert_case(trim($_POST['cargo']), MB_CASE_TITLE, 'UTF-8');
+     $email = trim($_POST['email']);
 
-        // URL de S3 (Asegúrate de que la carpeta y el logo existen)
-        $url_s3 = 'https://imagenes-firmas-corporativas.s3.eu-west-1.amazonaws.com/summum/';
-        ?>
+     // 2. Procesar Teléfono Fijo y Extensión
+     $tel_raw = preg_replace('/\D/', '', $_POST['telefono']);
+     $telefono = strlen($tel_raw) === 9 ? '+34 ' . $tel_raw : $tel_raw;
+
+     $ext = trim($_POST['extension']);
+     if (!empty($ext)) {
+         $telefono .= ' - Ext: ' . $ext;
+     }
+
+     // 3. Procesar Móvil (Solo añade +34 y la etiqueta si hay datos)
+     $mov_raw = preg_replace('/\D/', '', $_POST['movil']);
+     $movil_display = '';
+     if (!empty($mov_raw)) {
+         $formatted_mov = strlen($mov_raw) === 9 ? '+34 ' . $mov_raw : $mov_raw;
+         $movil_display = ' - Mov: +34 ' . $formatted_mov;
+     }
+
+     $url_s3 = 'https://imagenes-firmas-corporativas.s3.eu-west-1.amazonaws.com/summum/';
+     ?>
     
     <div class="preview-box">
         <table cellpadding="0" cellspacing="0" style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif; border-collapse: collapse; background-color: #ffffff;">
@@ -94,10 +110,8 @@
                   </tr>
                   <tr>
                     <td style="font-size: 13px; color: #666666; padding-bottom: 10px;">
-                      <?php echo $telefono; ?> <?php echo !empty($movil)
-     ? ' - Mov: ' . $movil
-     : ''; ?>
-                    </td>
+                  <?php echo $telefono . $movil_display; ?>
+                </td>
                   </tr>
                   <tr>
                     <td style="font-size: 14px; font-weight: bold; letter-spacing: 0.5px;">
@@ -142,7 +156,7 @@
         </div>
     <p style="color: #fbaa21; font-weight: bold;">↑ Selecciona desde aquí arriba hasta el logo para copiar ↑</p>
     <?php
-    } ?>
+ } ?>
 </div>
 
 </body>
