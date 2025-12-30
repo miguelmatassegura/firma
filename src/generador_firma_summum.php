@@ -71,9 +71,9 @@
         <table cellpadding="0" cellspacing="0" style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif; border-collapse: collapse; background-color: #ffffff;">
           <tbody>
             <tr>
-              <td style="vertical-align: middle;">
-                <img src="<?php echo $url_s3; ?>logosummum.png" width="220" style="display: block; border: 0;" alt="Summum Hotel Group">
-              </td>
+              <td width="280" style="width: 280px; padding: 0; margin: 0; vertical-align: middle;">
+    <img src="<?php echo $url_s3; ?>logosummum.png" width="280" style="display: block; border: 0; width: 280px; max-width: 280px;" alt="Summum Hotel Group">
+</td>
 
               <td width="1" style="width: 1px; border-left: 1px solid #808080; padding: 0;">
                 <div style="height: 100px; width: 1px;"></div>
