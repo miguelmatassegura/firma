@@ -47,9 +47,9 @@
     </div>
 
     <form method="post" action="">
-        <input type="text" name="nombre" placeholder="Nombre y Apellidos" required>
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="text" name="apellido" placeholder="Apellido" required>
         <input type="text" name="cargo" placeholder="Cargo o Departamento" required>
-        <input type="text" name="email" placeholder="Email corporativo" required>
         <input type="text" name="telefono" placeholder="Teléfono fijo (ej:  971...)" required>
         <input type="text" name="extension" placeholder="Ext. (opcional)" maxlength="4" style="width: 80px;">
         <input type="text" name="movil" placeholder="Móvil (ej: + 600...)">
@@ -59,10 +59,13 @@
 
  <?php if (isset($_POST['submit'])) {
 
+     $nombre = trim($_POST['nombre']);
+     $apellido = trim($_POST['apellido']);
      // 1. Formatear Nombre y Cargo (Mayúscula inicial en cada palabra)
-     $nombre = mb_convert_case(trim($_POST['nombre']), MB_CASE_TITLE, 'UTF-8');
+     $nombre_mayuscula = mb_convert_case(trim($nombre), MB_CASE_TITLE, 'UTF-8');
+     $apellido_mayuscula = mb_convert_case(trim($apellido), MB_CASE_TITLE, 'UTF-8');
      $cargo = mb_convert_case(trim($_POST['cargo']), MB_CASE_TITLE, 'UTF-8');
-     $email = trim($_POST['email']);
+     $email = $nombre . $apellido . '@summumhg.com';
 
      // 2. Procesar Teléfono Fijo y Extensión
      $tel_raw = preg_replace('/\D/', '', $_POST['telefono']);
@@ -99,7 +102,9 @@
               <td style="vertical-align: middle; padding-left: 20px;">
                 <table cellpadding="0" cellspacing="0" style="line-height: 1.4;">
                   <tr>
-                    <td style="font-size: 19px; font-weight: bold; color: #1a1a1a; padding-bottom: 2px;"><?php echo $nombre; ?></td>
+                    <td style="font-size: 19px; font-weight: bold; color: #1a1a1a; padding-bottom: 2px;"><?php echo $nombre_mayuscula .
+                        ' ' .
+                        $apellido_mayuscula; ?></td>
                   </tr>
                   <tr>
                     <td style="font-size: 14px; color: #666666; padding-bottom: 12px;"><?php echo $cargo; ?></td>

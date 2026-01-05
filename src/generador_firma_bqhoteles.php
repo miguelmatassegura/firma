@@ -214,7 +214,7 @@ $url_s3 = 'https://imagenes-firmas-corporativas.s3.eu-west-1.amazonaws.com/bqhot
                     <td style="vertical-align: middle;">
                         <table cellpadding="0" cellspacing="0" style="font-size: 12px; color: #000000;">
                             <tr>
-                                <td><img src="<?php echo $url_s3; ?>telefono.png" width="12" style="margin-right:8px;"> <a href="tel:<?php echo $fijo; ?>" style="color:#000; text-decoration:none;"><?php echo $fijo; ?></a> <?php echo $ext; ?> <?php echo $movil; ?></td>
+                                <td><img src="<?php echo $url_s3; ?>telefono.png" width="12" style="margin-right:8px;"> <a href="tel:<?php echo $fijo; ?>" style="color:#000; text-decoration:none;"><?php echo $fijo; ?></a> <?php echo $ext; ?> <a href="tel:<?php echo $movil; ?>" style="color:#000; text-decoration:none;"><?php echo $movil; ?></a></td>
                             </tr>
                             <tr>
                                 <td style="padding: 4px 0;"><img src="<?php echo $url_s3; ?>email.png" width="12" style="margin-right:8px;"> <a href="mailto:<?php echo $email; ?>" style="color:#000; text-decoration:none;"><?php echo $email; ?></a></td>
