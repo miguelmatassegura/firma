@@ -77,7 +77,7 @@
      $movil_display = '';
      if (!empty($mov_raw)) {
          $formatted_mov = strlen($mov_raw) === 9 ? '+34 ' . $mov_raw : $mov_raw;
-         $movil_display = ' - Mov: +34 ' . $formatted_mov;
+         $movil_display = ' - Mov:  ' . $formatted_mov;
      }
 
      $url_s3 = 'https://imagenes-firmas-corporativas.s3.eu-west-1.amazonaws.com/summum/';

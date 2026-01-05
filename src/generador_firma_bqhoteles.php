@@ -24,6 +24,7 @@ $url_s3 = 'https://imagenes-firmas-corporativas.s3.eu-west-1.amazonaws.com/bqhot
         .preview-box { border: 2px dashed #fbaa21; padding: 25px; margin-top: 25px; background-color: white; display: inline-block; }
         .btn-volver { text-decoration: none; color: #666; font-size: 14px; display: inline-block; margin-bottom: 20px; }
         .btn-volver:hover { color: #fbaa21; }
+        a {text-decoration: none;}
     </style>
 </head>
 <body>
