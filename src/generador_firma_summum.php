@@ -11,6 +11,7 @@
     .btn-generar { background-color: #1a1a1a; color: white; padding: 12px 25px; border: none; cursor: pointer; font-weight: bold; }
     .btn-generar:hover { background-color: #333; }
     .preview-box { border: 2px dashed #fbaa21; padding: 20px; margin-top: 20px; background-color: white; }
+    a {text-decoration: none;}
 </style>
 </head>
 <body>
@@ -145,7 +146,7 @@
                         <tr>
                             <td style="font-size: 10px; color: #999999; line-height: 1.2; text-align: justify; font-family: Arial, sans-serif;">
                                 Puede consultar la información adicional y detallada sobre protección de datos en nuestra página web: 
-                                <a href="https://www.summumhotelgroup.com/es/politica/" style="color: #666666; text-decoration: underline;">www.summumhotelgroup.com/es/politica/</a>
+                                <a href="https://www.summumhotelgroup.com/es/politica/" style="color: #666666; text-decoration: underline;">www.summumhotelgroup.com</a>
                             </td>
                         </tr>
                     </table>
