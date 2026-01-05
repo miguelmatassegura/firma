@@ -110,7 +110,7 @@
                   </tr>
                   <tr>
                     <td style="font-size: 13px; color: #666666; padding-bottom: 10px;">
-                  <?php echo $telefono . $movil_display; ?>
+                  <a href="tel: <?php echo $tel_raw; ?>" style="color: #666666; text-decoration: none;"><?php echo $telefono; ?></a>  <a href="tel: <?php echo $mov_raw; ?>" style="color: #666666; text-decoration: none;"><?php echo $movil_display; ?></a>
                 </td>
                   </tr>
                   <tr>
