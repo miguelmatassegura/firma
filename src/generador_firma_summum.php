@@ -70,7 +70,15 @@
 
      // 2. Procesar Teléfono Fijo y Extensión
      $tel_raw = preg_replace('/\D/', '', $_POST['telefono']);
-     $telefono = strlen($tel_raw) === 9 ? '+34 ' . $tel_raw : $tel_raw;
+
+     // Si empieza por 34, se lo quitamos
+     if (strpos($tel_raw, '34') === 0) {
+         $tel_raw = substr($tel_raw, 2);
+     }
+
+     // Ahora siempre añadimos +34
+     $telefono_tel = '+34' . $tel_raw;
+     $telefono_display = '+34 ' . $tel_raw;
 
      $ext = trim($_POST['extension']);
      if (!empty($ext)) {
@@ -117,7 +125,7 @@
                   </tr>
                   <tr>
                     <td style="font-size: 13px; color: #666666; padding-bottom: 10px;">
-                  <a href="tel: <?php echo $tel_raw; ?>" style="color: #666666; text-decoration: none;">Tel: <?php echo $telefono; ?></a>  <a href="tel: <?php echo $mov_raw; ?>" style="color: #666666; text-decoration: none;"><?php echo $movil_display; ?></a>
+                  <a href="tel: <?php echo $telefono_tel; ?>" style="color: #666666; text-decoration: none;">Tel: <?php echo $telefono_display; ?></a>  <a href="tel: +34<?php echo $mov_raw; ?>" style="color: #666666; text-decoration: none;"><?php echo $movil_display; ?></a>
                 </td>
                   </tr>
                   <tr>
