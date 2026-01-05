@@ -49,6 +49,7 @@
     <form method="post" action="">
         <input type="text" name="nombre" placeholder="Nombre" required>
         <input type="text" name="apellido" placeholder="Apellido" required>
+        <input type="text" name="email" placeholder="email" required>
         <input type="text" name="cargo" placeholder="Cargo o Departamento" required>
         <input type="text" name="telefono" placeholder="Teléfono fijo (ej:  971...)" required>
         <input type="text" name="extension" placeholder="Ext. (opcional)" maxlength="4" style="width: 80px;">
@@ -65,7 +66,7 @@
      $nombre_mayuscula = mb_convert_case(trim($nombre), MB_CASE_TITLE, 'UTF-8');
      $apellido_mayuscula = mb_convert_case(trim($apellido), MB_CASE_TITLE, 'UTF-8');
      $cargo = mb_convert_case(trim($_POST['cargo']), MB_CASE_TITLE, 'UTF-8');
-     $email = $nombre . $apellido . '@summumhg.com';
+     $email = trim($_POST['email']);
 
      // 2. Procesar Teléfono Fijo y Extensión
      $tel_raw = preg_replace('/\D/', '', $_POST['telefono']);
@@ -116,7 +117,7 @@
                   </tr>
                   <tr>
                     <td style="font-size: 13px; color: #666666; padding-bottom: 10px;">
-                  <a href="tel: <?php echo $tel_raw; ?>" style="color: #666666; text-decoration: none;"><?php echo $telefono; ?></a>  <a href="tel: <?php echo $mov_raw; ?>" style="color: #666666; text-decoration: none;"><?php echo $movil_display; ?></a>
+                  <a href="tel: <?php echo $tel_raw; ?>" style="color: #666666; text-decoration: none;">Tel: <?php echo $telefono; ?></a>  <a href="tel: <?php echo $mov_raw; ?>" style="color: #666666; text-decoration: none;"><?php echo $movil_display; ?></a>
                 </td>
                   </tr>
                   <tr>
