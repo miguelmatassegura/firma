@@ -82,15 +82,24 @@
 
      $ext = trim($_POST['extension']);
      if (!empty($ext)) {
-         $telefono .= ' - Ext: ' . $ext;
+         $telefono_display .= ' - Ext: ' . $ext;
      }
 
      // 3. Procesar Móvil (Solo añade +34 y la etiqueta si hay datos)
      $mov_raw = preg_replace('/\D/', '', $_POST['movil']);
+
      $movil_display = '';
+     $movil_tel = '';
+
      if (!empty($mov_raw)) {
-         $formatted_mov = strlen($mov_raw) === 9 ? '+34 ' . $mov_raw : $mov_raw;
-         $movil_display = ' - Mov:  ' . $formatted_mov;
+         // Si empieza por 34, lo quitamos
+         if (strpos($mov_raw, '34') === 0) {
+             $mov_raw = substr($mov_raw, 2);
+         }
+
+         // Ahora siempre añadimos +34
+         $movil_tel = '+34' . $mov_raw;
+         $movil_display = ' - Mov: +34 ' . $mov_raw;
      }
 
      $url_s3 = 'https://imagenes-firmas-corporativas.s3.eu-west-1.amazonaws.com/summum/';
@@ -125,7 +134,7 @@
                   </tr>
                   <tr>
                     <td style="font-size: 13px; color: #666666; padding-bottom: 10px;">
-                  <a href="tel: <?php echo $telefono_tel; ?>" style="color: #666666; text-decoration: none;">Tel: <?php echo $telefono_display; ?></a>  <a href="tel: +34<?php echo $mov_raw; ?>" style="color: #666666; text-decoration: none;"><?php echo $movil_display; ?></a>
+                  <a href="tel: <?php echo $telefono_tel; ?>" style="color: #666666; text-decoration: none;">Tel: <?php echo $telefono_display; ?></a>  <a href="tel: <?php echo $movil_tel; ?>" style="color: #666666; text-decoration: none;"><?php echo $movil_display; ?></a>
                 </td>
                   </tr>
                   <tr>
