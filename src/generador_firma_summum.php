@@ -65,7 +65,7 @@
      // 1. Formatear Nombre y Cargo (Mayúscula inicial en cada palabra)
      $nombre_mayuscula = mb_convert_case(trim($nombre), MB_CASE_TITLE, 'UTF-8');
      $apellido_mayuscula = mb_convert_case(trim($apellido), MB_CASE_TITLE, 'UTF-8');
-     $cargo = mb_convert_case(trim($_POST['cargo']), MB_CASE_TITLE, 'UTF-8');
+     $cargo = trim($_POST['cargo']);
      $email = trim($_POST['email']);
 
      // 2. Procesar Teléfono Fijo y Extensión
